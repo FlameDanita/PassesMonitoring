@@ -1,8 +1,8 @@
-import pandas as pd #pip install pandas
-import xlwt #pip install xlwt
+#import pandas as pd #pip install pandas
+#import xlwt #pip install xlwt
 from openpyxl import load_workbook #pip install openpyxldd
-from tqdm import tqdm
-import datetime
+from tqdm import tqdm #pip install tqdm
+#import datetime
 
 rb = load_workbook('./workedjournal.xlsx')
 wb = load_workbook('./DataBase.xlsx')
@@ -105,6 +105,8 @@ for rows in tqdm(work_sheet_wb_main.iter_rows(values_only=True)):
                 pass
             
     counter -= 1
+    if n_row > 2000:
+        break
 
 wb.save('./DataBase.xlsx')
 
